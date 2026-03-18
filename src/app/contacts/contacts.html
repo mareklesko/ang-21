@@ -1,0 +1,62 @@
+<div class="contacts-container">
+  <h1>Contact Us</h1>
+
+  <mat-card class="intro-card">
+    <mat-card-content>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt
+        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+        ullamco laboris nisi ut aliquip ex ea commodo consequat. We are happy to hear from you
+        and will respond within one business day.
+      </p>
+    </mat-card-content>
+  </mat-card>
+
+  <div class="contact-grid">
+    <mat-card class="contact-info-card">
+      <mat-card-header>
+        <mat-card-title>Contact Information</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item>
+            <mat-icon matListItemIcon>location_on</mat-icon>
+            <span matListItemTitle>Address</span>
+            <span matListItemLine>Hlavná 1, 040 01 Košice, Slovakia</span>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListItemIcon>phone</mat-icon>
+            <span matListItemTitle>Phone</span>
+            <span matListItemLine>+421 55 123 4567</span>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListItemIcon>email</mat-icon>
+            <span matListItemTitle>Email</span>
+            <span matListItemLine>info&#64;ang21.example.com</span>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListItemIcon>schedule</mat-icon>
+            <span matListItemTitle>Office Hours</span>
+            <span matListItemLine>Mon–Fri: 9:00 – 17:00</span>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <mat-card class="map-card">
+    <mat-card-header>
+      <mat-card-title>Our Location – Košice, Slovakia</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="map-content">
+      <iframe
+        [src]="mapUrl"
+        class="map-frame"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Košice, Slovakia map">
+      </iframe>
+    </mat-card-content>
+  </mat-card>
+</div>
