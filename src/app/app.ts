@@ -1,10 +1,11 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { ThemeService } from './theme.service';
 
 @Component({
   selector: 'app-root',
@@ -23,27 +24,18 @@ import { MatListModule } from '@angular/material/list';
 })
 export class App implements OnInit {
   title = 'ang-21';
-  isDarkTheme = signal(false);
+
+  constructor(protected themeService: ThemeService) {}
+
+  get isDarkTheme() {
+    return this.themeService.isDarkTheme;
+  }
 
   ngOnInit(): void {
-    const saved = localStorage.getItem('theme');
-    if (saved === 'dark') {
-      this.isDarkTheme.set(true);
-      document.body.classList.add('dark-theme');
-      document.body.style.colorScheme = 'dark';
-    }
+    this.themeService.init();
   }
 
   toggleTheme(): void {
-    this.isDarkTheme.update(v => !v);
-    if (this.isDarkTheme()) {
-      document.body.classList.add('dark-theme');
-      document.body.style.colorScheme = 'dark';
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.body.classList.remove('dark-theme');
-      document.body.style.colorScheme = 'light';
-      localStorage.setItem('theme', 'light');
-    }
+    this.themeService.toggle();
   }
 }
