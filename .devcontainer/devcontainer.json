@@ -1,6 +1,6 @@
 {
   "name": "Angular / TypeScript (Node 24)",
-  "image": "mcr.microsoft.com/devcontainers/typescript-node:24",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node",
   "customizations": {
     "vscode": {
       "extensions": [
